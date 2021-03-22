@@ -1,0 +1,42 @@
+const people = [
+      {
+        name: 'Ayrton',
+        age: 27
+      },
+      {
+        name: 'João',
+        age: 14
+      },
+      {
+        name: 'Maria',
+        age: 23
+      },
+      {
+        name: 'Joana',
+        age: 21
+      },
+      {
+        name: 'Lucas',
+        age: 32
+      },
+      {
+        name: 'Mateus',
+        age: 15
+      },
+      {
+        name: 'Isa',
+        age: 23
+      },
+      {
+        name: 'Luiza',
+        age: 17
+      }
+    ];
+
+const agruped = people.reduce(function(acumulative,moment){
+ const greaterOrLess = moment.age >= 18 ? 'greater' : 'less';
+
+ acumulative[greaterOrLess].push(moment);
+ return acumulative;
+
+},{greater:[],less:[]})
